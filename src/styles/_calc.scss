@@ -1,0 +1,24 @@
+.bg {
+  background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+}
+.calculator{
+  width: 16%;
+  position: absolute;
+  bottom: 30vh;
+  left: 40vw;
+}
+.num {
+  width: 95%;
+  font-weight: bold;
+  color: #4e555b;
+}
+.calc {
+  border: 2px solid $btn_calc_color;
+  border-radius: 15px;
+  width: 300px;
+}
+
+.equally {
+  background-color: $btn_calc_color;
+  width: 98%;
+}

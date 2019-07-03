@@ -1,0 +1,21 @@
+body  {
+  width: 100%;
+  height: 100vh;
+}
+.round {
+  background-color: $bg_color_form;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  border-radius: 15px;
+}
+.enter {
+  background-color: $btn_color;
+  font-weight: bold;
+  color: $bg_color_form;
+}
+
+#alertEmail, #alertPass, #alertError {
+  display: none;
+
+}
