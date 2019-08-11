@@ -1,24 +1,21 @@
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var pipeline = require('readable-stream').pipeline;
-
-gulp.task('compress', function () {
-    return pipeline(
-        gulp.src('src/js/*.js'),
-        uglify(),
-        gulp.dest('dist')
-    );
-});
-
 'use strict';
+var gulp = require ('gulp');
+var scss = require ('gulp-sass');
 
+var  src = {
+    scss: 'src/scss/*.scss',
+    js: ['src/js/*.js', '!src/js/*.min.js']
+};
 
-var sass = require('gulp-sass');
-
-sass.compiler = require('node-sass');
-
-gulp.task('sass', function () {
-    return gulp.src('src/styles/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('dist'));
+gulp.task('scss', function () {
+    return gulp.src(src.scss)
+        .pipe(scss({"bundleExec": true}))
+        .pipe(gulp.dest('dist'))
 });
+
+gulp.task('watch', function () {
+    gulp.watch(src.scss, gulp.series(['scss']));
+    gulp.watch(src.js, gulp.series(['minify']))
+});
+
+gulp.task('default', gulp.series(['scss','watch']));

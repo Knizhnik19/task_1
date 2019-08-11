@@ -16,14 +16,14 @@
             <form>
                 <div class="form-group">
                     <label for="Email">Введите адрес электронной почты</label>
-                    <input type="email" class="form-control" id="Email" placeholder="Email" required>
+                    <input type="email" class="form-control" id="Email" placeholder="Email" required onchange="change()">
                 </div>
                 <div id="alertEmail" role="alert" class="alert alert-danger mt-2">
                     Проверьте корректность данных!
                 </div>
                 <div class="form-group">
                     <label for="Password">Пароль</label>
-                    <input type="password" class="form-control" id="Password" placeholder="Password" required>
+                    <input type="password" class="form-control" id="Password" placeholder="Password" required onchange="change()">
                 </div>
                 <div id="alertPass" role="alert" class="alert alert-danger mt-2">
                    Проверьте корректность данных!
@@ -37,6 +37,6 @@
     </div>
 </div>
 
-<script src="src/js/main.js"></script>
+<script src="dist/js/main.js"></script>
 </body>
 </html>
